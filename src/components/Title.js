@@ -8,6 +8,7 @@ const Title=()=>{
         <div>
             <h1>TODO APP</h1>
             <p>Kayıtlı todo sayısı: {uygulamaninStatei.todosState.todos.length}</p>
+            <p>Yapılanlar:{uygulamaninStatei.todosState.todos.filter(item => item.isDone === true).length}     Yapılmayanlar:{uygulamaninStatei.todosState.todos.filter(item => item.isDone === false).length}</p>
         </div>
     )
 }

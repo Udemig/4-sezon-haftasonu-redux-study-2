@@ -2,9 +2,12 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 
+import SingleTodo from "./SingleTodo";
+
+
+
 const ListTodos = () => {
   const uygulamaninStatei = useSelector((state) => state);
-  console.log(uygulamaninStatei);
   return (
     <div>
       {uygulamaninStatei.todosState.todos.length === 0 && (
@@ -13,7 +16,7 @@ const ListTodos = () => {
       {uygulamaninStatei.todosState.todos.length > 0 && (
         <>
           {uygulamaninStatei.todosState.todos.map((todo) => (
-            <h1>{todo.text}</h1>
+            <SingleTodo todo={todo} key={todo.id} />
           ))}
         </>
       )}
